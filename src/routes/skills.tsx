@@ -110,15 +110,15 @@ function Skills() {
                 const tool = toolByName(item);
                 return (
                   <li key={item} className="flex items-center gap-2.5 text-sm">
-                    {tool ? (
-                      <span className="animate-float-slow" style={{ animationDuration: "9s" }}>
+                    <span className="grid size-[26px] shrink-0 place-items-center">
+                      {tool ? (
                         <ToolMark tool={tool} size={26} />
-                      </span>
-                    ) : (
-                      <span className="grid size-[26px] shrink-0 place-items-center rounded-[28%] bg-primary-soft text-[11px] font-semibold text-secondary-foreground">
-                        ✓
-                      </span>
-                    )}
+                      ) : (
+                        <span className="grid size-[26px] place-items-center rounded-[28%] bg-primary-soft text-[11px] font-semibold text-secondary-foreground">
+                          ✓
+                        </span>
+                      )}
+                    </span>
                     <span className="text-muted-foreground">{item}</span>
                   </li>
                 );
