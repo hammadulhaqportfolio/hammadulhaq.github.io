@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { AnimatedBackground } from "./animated-background";
+import { CursorAtmosphere } from "./cursor-atmosphere";
 import { CONTACT } from "@/data/portfolio";
 
 const NAV = [
@@ -16,6 +17,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className="relative min-h-screen">
       <AnimatedBackground />
+      <CursorAtmosphere />
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
           <Link to="/" className="flex items-center gap-2.5">
@@ -59,7 +61,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </nav>
       </header>
 
-      <main>{children}</main>
+      <main className="relative z-10">{children}</main>
 
       <footer className="mt-24 border-t border-border/70 bg-card/50 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">

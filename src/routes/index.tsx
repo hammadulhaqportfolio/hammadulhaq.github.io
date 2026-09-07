@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/site-shell";
 import { Lightbox, MediaTile, useLightbox } from "@/components/site/media-gallery";
-import { ToolMark, TOOLS } from "@/components/site/tools";
+import { ToolChip } from "@/components/site/tools";
 import { portrait, posts, thumbnails } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -31,13 +31,23 @@ const STATS = [
   { value: "4+ yrs", label: "Creative experience" },
 ];
 
+const HERO_TOOLS = [
+  "Adobe Photoshop",
+  "Canva",
+  "CapCut",
+  "MS Excel",
+  "MS Word",
+  "Claude AI",
+  "ChatGPT",
+];
+
 function Home() {
   const lightbox = useLightbox();
 
   return (
     <SiteShell>
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-8 pt-14 sm:pt-20 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
+        <div className="animate-reveal">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs font-medium text-muted-foreground">
             <span className="size-2 rounded-full bg-primary" />
             Available full-time, part-time or project based
@@ -66,15 +76,13 @@ function Home() {
             </Link>
           </div>
           <div className="mt-9 flex flex-wrap items-center gap-2.5">
-            {TOOLS.slice(0, 11).map((tool) => (
-              <span key={tool.name} title={tool.name}>
-                <ToolMark tool={tool} size={34} />
-              </span>
+            {HERO_TOOLS.map((tool) => (
+              <ToolChip key={tool} name={tool} />
             ))}
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-sm">
+        <div className="relative mx-auto w-full max-w-sm animate-reveal-delayed">
           <div className="absolute -inset-5 rounded-[2rem] bg-gradient-sky opacity-25 blur-2xl" />
           <div className="relative overflow-hidden rounded-[1.75rem] border border-primary/30 bg-card p-2 shadow-sky-lg">
             <img

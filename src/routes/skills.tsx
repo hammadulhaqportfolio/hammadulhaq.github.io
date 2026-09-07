@@ -99,7 +99,7 @@ function Skills() {
         {GROUPS.map((group) => (
           <article
             key={group.title}
-            className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-card-soft backdrop-blur transition-shadow hover:shadow-sky"
+            className="group rounded-lg border border-border/70 bg-card/85 p-6 shadow-card-soft backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-sky"
           >
             <h2 className="flex items-center gap-3 text-lg">
               <span className="h-1.5 w-7 rounded-full bg-gradient-sky" />
@@ -112,7 +112,7 @@ function Skills() {
                   <li key={item} className="flex items-center gap-2.5 text-sm">
                     <span className="grid size-[26px] shrink-0 place-items-center">
                       {tool ? (
-                        <ToolMark tool={tool} size={26} />
+                        <ToolMark tool={tool} size={30} className="transition-transform duration-300 group-hover:scale-105" />
                       ) : (
                         <span className="grid size-[26px] place-items-center rounded-[28%] bg-primary-soft text-[11px] font-semibold text-secondary-foreground">
                           ✓
