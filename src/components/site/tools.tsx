@@ -1,27 +1,35 @@
-// Third-party brand marks. Brand colours are data (not theme tokens), so they
-// live here in one place instead of being sprinkled across components.
+import photoshopLogo from "@/assets/tool-logos/photoshop.svg";
+import canvaLogo from "@/assets/tool-logos/canva.svg";
+import capcutLogo from "@/assets/tool-logos/capcut.svg";
+import chatgptLogo from "@/assets/tool-logos/chatgpt.svg";
+import claudeLogo from "@/assets/tool-logos/claude.svg";
+import geminiLogo from "@/assets/tool-logos/gemini.svg";
+import gmailLogo from "@/assets/tool-logos/gmail.svg";
+import calendarLogo from "@/assets/tool-logos/calendar.svg";
+import meetLogo from "@/assets/tool-logos/meet.svg";
+import excelLogo from "@/assets/tool-logos/excel.svg";
+import wordLogo from "@/assets/tool-logos/word.svg";
+import youtubeLogo from "@/assets/tool-logos/youtube.svg";
+
 export type Tool = {
   name: string;
-  short: string;
-  from: string;
-  to: string;
+  icon: string;
 };
 
 export const TOOLS: Tool[] = [
-  { name: "Adobe Photoshop", short: "Ps", from: "#0b2c50", to: "#31a8ff" },
-  { name: "Canva", short: "Cv", from: "#00c4cc", to: "#7d2ae8" },
-  { name: "CapCut", short: "Cc", from: "#111827", to: "#00d1c1" },
-  { name: "ChatGPT", short: "AI", from: "#0f9d7a", to: "#10a37f" },
-  { name: "Claude AI", short: "Cl", from: "#d97757", to: "#f2a488" },
-  { name: "Gemini", short: "Gm", from: "#4285f4", to: "#9b72cb" },
-  { name: "Gmail", short: "M", from: "#ea4335", to: "#fbbc04" },
-  { name: "Google Calendar", short: "31", from: "#1a73e8", to: "#4dabf7" },
-  { name: "Google Sheets", short: "Sh", from: "#0f9d58", to: "#34a853" },
-  { name: "MS Excel", short: "X", from: "#107c41", to: "#21a366" },
-  { name: "MS Word", short: "W", from: "#185abd", to: "#2b7cd3" },
-  { name: "YouTube", short: "▶", from: "#ff0000", to: "#ff5252" },
-  { name: "Instagram", short: "Ig", from: "#f9ce34", to: "#ee2a7b" },
-  { name: "Facebook", short: "f", from: "#1877f2", to: "#4293ff" },
+  { name: "Adobe Photoshop", icon: photoshopLogo },
+  { name: "Canva", icon: canvaLogo },
+  { name: "CapCut", icon: capcutLogo },
+  { name: "ChatGPT", icon: chatgptLogo },
+  { name: "Claude AI", icon: claudeLogo },
+  { name: "Gemini", icon: geminiLogo },
+  { name: "Gmail", icon: gmailLogo },
+  { name: "Google Calendar", icon: calendarLogo },
+  { name: "Google Meet", icon: meetLogo },
+  { name: "Google Sheets", icon: excelLogo },
+  { name: "MS Excel", icon: excelLogo },
+  { name: "MS Word", icon: wordLogo },
+  { name: "YouTube", icon: youtubeLogo },
 ];
 
 export const toolByName = (name: string) => TOOLS.find((t) => t.name === name);
@@ -38,16 +46,13 @@ export function ToolMark({
   return (
     <span
       aria-hidden="true"
-      className={`inline-flex shrink-0 items-center justify-center rounded-[28%] font-display font-semibold text-white ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-lg border border-border/80 bg-card/85 p-[18%] shadow-card-soft backdrop-blur-md ${className}`}
       style={{
         width: size,
         height: size,
-        fontSize: Math.max(11, size * 0.4),
-        background: `linear-gradient(140deg, ${tool.from}, ${tool.to})`,
-        boxShadow: `0 6px 18px -8px ${tool.from}`,
       }}
     >
-      {tool.short}
+      <img src={tool.icon} alt="" className="size-full object-contain" />
     </span>
   );
 }
@@ -55,7 +60,7 @@ export function ToolMark({
 export function ToolChip({ name }: { name: string }) {
   const tool = toolByName(name);
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm text-card-foreground shadow-card-soft">
+    <span className="group inline-flex items-center gap-2.5 rounded-lg border border-border/80 bg-card/75 px-3 py-2 text-sm text-card-foreground shadow-card-soft backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-sky">
       {tool ? (
         <ToolMark tool={tool} size={22} />
       ) : (
