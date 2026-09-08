@@ -19,6 +19,8 @@ export const Route = createFileRoute("/")({
         content:
           "1000+ thumbnails, 5000+ social posts and 100+ channels supported. Available full-time, part-time or project based.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,

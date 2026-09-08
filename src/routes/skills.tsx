@@ -17,6 +17,8 @@ export const Route = createFileRoute("/skills")({
         content:
           "A complete content production toolkit: design, video, scriptwriting, AI tools and daily office and data entry work.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Skills,

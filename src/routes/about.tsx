@@ -18,6 +18,8 @@ export const Route = createFileRoute("/about")({
         content:
           "Creative thinking with practical execution: design, editing, scriptwriting, publishing workflows and virtual assistance.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: About,

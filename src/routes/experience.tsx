@@ -18,6 +18,8 @@ export const Route = createFileRoute("/experience")({
         content:
           "Social Media Manager at Apex Sports, Pakistan's largest sports channel, plus YouTube automation and freelance design.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Experience,
