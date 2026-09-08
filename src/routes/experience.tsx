@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, SiteShell } from "@/components/site/site-shell";
 import { APEX_SPORTS_URL } from "@/data/portfolio";
-import apexSportsProfile from "@/assets/apex-sports-profile.jpg.asset.json";
 
 export const Route = createFileRoute("/experience")({
   head: () => ({
@@ -92,8 +91,7 @@ function Experience() {
                     className="mt-3 inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary-soft/70 py-1.5 pl-1.5 pr-4 transition-colors hover:bg-primary-soft"
                   >
                     <img
-                      src={apexSportsProfile.url}
-                      alt="Apex Sports profile"
+                    src="https://plain-eeur-prod-public.komododecks.com/202609/08/sSIIHfu1K4incQddluRU/image.jpg"
                       className="size-10 rounded-full border border-primary/35 object-cover"
                     />
                     <span className="flex items-center gap-1.5 text-sm font-medium text-secondary-foreground">
