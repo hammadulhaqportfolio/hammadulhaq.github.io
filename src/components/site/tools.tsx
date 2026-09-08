@@ -46,13 +46,13 @@ export function ToolMark({
   return (
     <span
       aria-hidden="true"
-      className={`inline-flex shrink-0 items-center justify-center rounded-lg border border-border/80 bg-card/85 p-[18%] shadow-card-soft backdrop-blur-md ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-lg border border-border/80 bg-secondary/90 shadow-card-soft backdrop-blur-md ${className}`}
       style={{
         width: size,
         height: size,
       }}
     >
-      <img src={tool.icon} alt="" className="size-full object-contain" />
+      <img src={tool.icon} alt="" className="size-[68%] object-contain drop-shadow-sm" />
     </span>
   );
 }

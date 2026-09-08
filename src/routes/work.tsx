@@ -17,6 +17,8 @@ export const Route = createFileRoute("/work")({
         property: "og:description",
         content: "A selection from 1000+ thumbnails, 5000+ social posts and brand identities.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Work,
